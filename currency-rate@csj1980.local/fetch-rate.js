@@ -4,9 +4,27 @@
 // 由 extension.js 以 Gio.Subprocess 定期呼叫，不常駐執行。
 
 imports.gi.versions.Gtk = '3.0';
-imports.gi.versions.WebKit2 = '4.1';
 
-const { Gtk, WebKit2, GLib } = imports.gi;
+const GLib = imports.gi.GLib;
+
+// 不同發行版可能只有 WebKit2 4.1 或 4.0 的 GI typelib，依序嘗試。
+function loadWebKit2() {
+    for (const version of ['4.1', '4.0']) {
+        try {
+            imports.gi.versions.WebKit2 = version;
+            return imports.gi.WebKit2;
+        } catch (e) {
+            // 換下一個版本試試看
+        }
+    }
+    printerr('fetch-rate: 找不到可用的 WebKit2 GI typelib (試過 4.1 / 4.0)，'
+        + '請安裝對應發行版的 webkit2gtk GObject Introspection 套件');
+    imports.system.exit(1);
+    return null;
+}
+
+const Gtk = imports.gi.Gtk;
+const WebKit2 = loadWebKit2();
 
 // 這台機器的 GL/EGL 後端無法讓 WebKit 用硬體加速的 offscreen 渲染，
 // 需要強制走軟體算繪，否則 Gtk.OffscreenWindow + WebView 會直接 abort。
