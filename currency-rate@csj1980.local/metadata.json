@@ -1,0 +1,7 @@
+{
+  "uuid": "currency-rate@csj1980.local",
+  "name": "台銀外幣匯率",
+  "description": "在頂部工作列顯示台灣銀行 USD/JPY/CNY/EUR 現金匯率(本行賣出)，每小時自動更新",
+  "shell-version": ["45", "46", "47", "48", "49", "50"],
+  "url": ""
+}
