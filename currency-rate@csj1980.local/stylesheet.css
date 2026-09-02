@@ -4,6 +4,8 @@
 
 .currency-rate-icon {
     font-weight: bold;
+    font-size: 1.15em;
+    line-height: 1;
     padding: 0 2px 0 0;
 }
 
