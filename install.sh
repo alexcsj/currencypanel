@@ -8,7 +8,7 @@
 set -euo pipefail
 
 UUID="currency-rate@csj1980.local"
-REPO_TARBALL_URL="https://github.com/alexcsj/currencypanel/archive/refs/heads/main.tar.gz"
+REPO_TARBALL_URL="https://codeload.github.com/alexcsj/currencypanel/tar.gz/refs/heads/main"
 EXTENSIONS_DIR="$HOME/.local/share/gnome-shell/extensions"
 TARGET_DIR="$EXTENSIONS_DIR/$UUID"
 
