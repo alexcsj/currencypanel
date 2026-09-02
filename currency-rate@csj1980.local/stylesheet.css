@@ -1,0 +1,34 @@
+.currency-rate-box {
+    spacing: 6px;
+}
+
+.currency-rate-icon {
+    font-weight: bold;
+    padding: 0 2px 0 0;
+}
+
+.currency-rate-text {
+    font-feature-settings: "tnum";
+}
+
+.currency-rate-dialog-hint {
+    padding-bottom: 6px;
+}
+
+.currency-rate-dialog-counter {
+    padding-bottom: 8px;
+    opacity: 0.8;
+}
+
+.currency-rate-dialog-counter-warn {
+    color: #e01b24;
+    opacity: 1;
+}
+
+.currency-rate-dialog-scroll {
+    max-height: 320px;
+}
+
+.currency-rate-dialog-list {
+    spacing: 4px;
+}
